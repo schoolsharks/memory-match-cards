@@ -20,7 +20,7 @@ const GameScreen = () => {
   }, []);
 
   useEffect(() => {
-    if (matchedPairs.length === 4) {
+    if (matchedPairs.length === 3) {
       setTimeout(() => setIsGameComplete(true), 1000);
     }
   }, [matchedPairs]);
@@ -159,7 +159,7 @@ const GameScreen = () => {
                 </div>
                 <div className="text-2xl font-bold text-white">
                   {matchedPairs.length}
-                  <span className="text-white">/4</span>
+                  <span className="text-white">/3</span>
                 </div>
               </motion.div>
             </div>
@@ -176,13 +176,13 @@ const GameScreen = () => {
               <motion.div
                 className="absolute inset-y-0 left-0 bg-[#96FF43]  rounded-full"
                 initial={{ width: 0 }}
-                animate={{ width: `${(matchedPairs.length / 4) * 100}%` }}
+                animate={{ width: `${(matchedPairs.length / 3) * 100}%` }}
                 transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-full"></div>
             </div>
             <div className="text-center mt-2 text-xs text-gray-500">
-              {Math.round((matchedPairs.length / 4) * 100)}% Complete
+              {Math.round((matchedPairs.length / 3) * 100)}% Complete
             </div>
           </motion.div>
 

@@ -68,8 +68,8 @@ const IntroScreen = () => {
           <div className="bg-[#464646] backdrop-blur-sm p-4 mb-6 border border-gray-700/30">
             {/* <div className="text-gray-500 text-sm mb-2">Game Stats</div> */}
             <div className="flex justify-between text-white">
-              <span>Cards: <span className="text-gray-300">8</span></span>
-              <span>Pairs: <span className="text-gray-300">4</span></span>
+              <span>Cards: <span className="text-gray-300">6</span></span>
+              <span>Pairs: <span className="text-gray-300">3</span></span>
             </div>
           </div>
           
