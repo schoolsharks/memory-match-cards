@@ -4,21 +4,40 @@ interface ResultModalProps {
   isOpen: boolean;
   moves: number;
   onPlayAgain: () => void;
-  onHome: () => void;
 }
 
-const ResultModal = ({ isOpen, moves, onPlayAgain, onHome }: ResultModalProps) => {
+const ResultModal = ({ isOpen, moves, onPlayAgain }: ResultModalProps) => {
   if (!isOpen) return null;
+
+
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Card Flip Game',
+        text: `I completed the game in ${moves} moves! Can you beat my score?`,
+        url: window.location.href,
+      }).catch((error) => console.error('Error sharing:', error));
+    } else {
+      // Copy link to clipboard when sharing is not supported
+      navigator.clipboard.writeText(window.location.href)
+        .then(() => {
+          alert('Link copied to clipboard! Share it with your friends.');
+        })
+        .catch(() => {
+          alert('Unable to copy link. Please copy the URL manually.');
+        });
+    }
+  }
 
   return (
     <motion.div
-      className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50"
+      className="fixed inset-0 bg-[#0D0D0D]/60 backdrop-blur-sm flex items-center justify-center z-50"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
       <motion.div
-        className="bg-gray-900/80 backdrop-blur-sm rounded-3xl p-8 max-w-md mx-4 text-center shadow-2xl border border-gray-800/50"
+        className="bg-[#0D0D0D]/90 backdrop-blur-sm rounded-3xl p-8 max-w-md mx-4 text-center shadow-2xl border border-gray-800/50"
         initial={{ scale: 0, rotateY: -180 }}
         animate={{ scale: 1, rotateY: 0 }}
         transition={{ 
@@ -42,7 +61,7 @@ const ResultModal = ({ isOpen, moves, onPlayAgain, onHome }: ResultModalProps) =
           🎉
         </motion.div>
         
-        <h2 className="text-3xl font-bold bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent mb-4">
+        <h2 className="text-3xl font-bold text-white mb-4">
           Congratulations!
         </h2>
         
@@ -61,7 +80,7 @@ const ResultModal = ({ isOpen, moves, onPlayAgain, onHome }: ResultModalProps) =
         <div className="flex gap-4 justify-center">
           <motion.button
             onClick={onPlayAgain}
-            className="px-6 py-3 bg-gray-800/50 backdrop-blur-sm text-white rounded-2xl font-semibold border border-gray-700/50 hover:bg-gray-700/50 hover:border-gray-600/50 transition-all duration-300"
+            className="px-6 py-3 bg-[#252525] backdrop-blur-sm text-gray-300  font-semibold transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -69,12 +88,12 @@ const ResultModal = ({ isOpen, moves, onPlayAgain, onHome }: ResultModalProps) =
           </motion.button>
           
           <motion.button
-            onClick={onHome}
-            className="px-6 py-3 bg-gray-800/50 backdrop-blur-sm text-gray-300 rounded-2xl font-semibold border border-gray-700/50 hover:bg-gray-700/50 hover:border-gray-600/50 hover:text-white transition-all duration-300"
+            onClick={handleShare}
+            className="px-6 py-3 bg-[#252525] backdrop-blur-sm text-gray-300  font-semibold transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Home
+            Share
           </motion.button>
         </div>
       </motion.div>

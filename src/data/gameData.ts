@@ -1,63 +1,53 @@
 export interface CardData {
   id: number;
-  type: 'short' | 'long';
+  type: 'scenario' | 'solution';
   pairId: number;
   content: string;
 }
 
 export const gameCards: CardData[] = [
-  // Pair 1 - Science
+  // Pair 1 - Sudden Change in Company Signatories
+
   {
     id: 1,
-    type: 'short',
+    type: 'scenario',
     pairId: 1,
-    content: 'Photosynthesis'
+    content: 'The customer changes directors and signatories just before requesting large trade transactions.'
   },
   {
     id: 2,
-    type: 'long',
+    type: 'solution',
     pairId: 1,
-    content: 'Plants use sunlight, water, air to make food.'
+    content: 'Verify the reason for the change and conduct fresh due diligence.'
   },
-  // Pair 2 - History
+  // Pair 2 No Supplier Details, Wants Advance Payment
+
   {
     id: 3,
-    type: 'short',
+    type: 'scenario',
     pairId: 2,
-    content: 'Industrial revolution'
+    content: ' Importer wants to pay in advance to a high-risk country but has no supplier contract.'
   },
   {
     id: 4,
-    type: 'long',
+    type: 'solution',
     pairId: 2,
-    content: 'Factories, machines, new inventions changed society.'
+    content: 'Request detailed documents and assess the legitimacy of the trade.'
   },
-  // Pair 3 - Technology
+  // Pair 3 - Overpriced Low-Value Goods
   {
     id: 5,
-    type: 'short',
+    type: 'scenario',
     pairId: 3,
-    content: 'Artificial intelligence'
+    content: 'Invoices show unusually high prices for low-value goods like cables and cloths.'
   },
   {
     id: 6,
-    type: 'long',
+    type: 'solution',
     pairId: 3,
-    content: 'Computers solve problems, learn, recognize patterns.'
+    content: 'Check pricing against industry standards and flag for over-invoicing.'
   },
-  // Pair 4 - Geography
-  {
-    id: 7,
-    type: 'short',
-    pairId: 4,
-    content: 'Climate change'
-  },
-  {
-    id: 8,
-    type: 'long',
-    pairId: 4,
-    content: 'Global warming, weather changes, human impact.'
-  }
+  
 ];
 
 export const shuffleCards = (cards: CardData[]): CardData[] => {

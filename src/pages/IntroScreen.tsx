@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const IntroScreen = () => {
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[#0D0D0D] relative overflow-hidden flex items-center justify-center p-4">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5"></div>
@@ -12,7 +12,7 @@ const IntroScreen = () => {
       </div>
 
       <motion.div
-        className="relative z-10 bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 max-w-md w-full shadow-2xl border border-gray-800/50"
+        className="relative z-10 bg-[#252525] p-8 max-w-md w-full shadow-2xl border border-gray-800/50"
         initial={{ opacity: 0, scale: 0.8, rotateY: -90 }}
         animate={{ opacity: 1, scale: 1, rotateY: 0 }}
         transition={{ 
@@ -42,31 +42,31 @@ const IntroScreen = () => {
             🧠
           </motion.div>
           
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent mb-6">
-            Memory Match Game
+          <h1 className="text-3xl font-bold text-white mb-6">
+            Flip & Find
           </h1>
           
           <div className="text-gray-400 text-left space-y-3 mb-8">
             <div className="flex items-start gap-3">
               <span className="text-white mt-1">•</span>
-              <span>Match terms with their definitions</span>
+              <span>Match each risky scenario with the right next step.</span>
             </div>
             <div className="flex items-start gap-3">
               <span className="text-white mt-1">•</span>
-              <span>Flip cards to reveal content</span>
+              <span>Tap to flip the cards and see what's inside.</span>
             </div>
             <div className="flex items-start gap-3">
               <span className="text-white mt-1">•</span>
-              <span>Find all 4 pairs to win</span>
+              <span>Find all 3 matching pairs.</span>
             </div>
             <div className="flex items-start gap-3">
               <span className="text-white mt-1">•</span>
-              <span>Complete in minimum moves</span>
+              <span>Try to use the least moves!</span>
             </div>
           </div>
           
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-4 mb-6 border border-gray-700/30">
-            <div className="text-gray-500 text-sm mb-2">Game Stats</div>
+          <div className="bg-[#464646] backdrop-blur-sm p-4 mb-6 border border-gray-700/30">
+            {/* <div className="text-gray-500 text-sm mb-2">Game Stats</div> */}
             <div className="flex justify-between text-white">
               <span>Cards: <span className="text-gray-300">8</span></span>
               <span>Pairs: <span className="text-gray-300">4</span></span>
@@ -75,7 +75,7 @@ const IntroScreen = () => {
           
           <Link to="/game">
             <motion.button
-              className="w-full py-3 bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700/50 text-white font-semibold rounded-2xl border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300"
+              className="w-full py-3 bg-[#96FF43] backdrop-blur-sm text-black font-semibold border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

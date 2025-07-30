@@ -92,13 +92,8 @@ const GameScreen = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
-      {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5"></div>
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-      </div>
+    <div className="min-h-screen bg-[#0D0D0D] relative overflow-hidden">
+      
 
       <div className="relative z-10 p-6">
         <div className="max-w-5xl mx-auto">
@@ -111,25 +106,25 @@ const GameScreen = () => {
           >
             <Link to="/">
               <motion.button
-                className="group p-3 rounded-2xl bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 text-gray-300 hover:text-white hover:border-gray-700/50 transition-all duration-300"
+                className="p-3 rounded-full hover:bg-[#252525]/10 text-white hover:text-white"
                 whileHover={{
                   scale: 1.05,
-                  backgroundColor: "rgba(31, 41, 55, 0.8)",
+                  backgroundColor: "#252525",
                 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <ArrowLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform duration-200" />
               </motion.button>
             </Link>
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
+            <h1 className="text-2xl font-bold text-white">
               Memory Match
             </h1>
             <motion.button
               onClick={initializeGame}
-              className="group px-4 py-3 rounded-2xl bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 text-gray-300 hover:text-white hover:border-gray-700/50 transition-all duration-300 flex items-center gap-2"
+              className="p-3 rounded-full hover:bg-[#252525]/10 text-white hover:text-white"
               whileHover={{
                 scale: 1.05,
-                backgroundColor: "rgba(31, 41, 55, 0.8)",
+                backgroundColor: "#252525",
               }}
               whileTap={{ scale: 0.95 }}
             >
@@ -146,7 +141,7 @@ const GameScreen = () => {
           >
             <div className="flex justify-center gap-8">
               <motion.div
-                className="flex items-center py-1 px-4 gap-4 rounded-2xl bg-gray-900/30 backdrop-blur-sm border border-gray-800/30"
+                className="flex items-center py-1 px-4 gap-4 bg-[#252525]"
                 whileHover={{ scale: 1.05 }}
               >
                 <div className="text-gray-400 text-sm font-medium">
@@ -156,7 +151,7 @@ const GameScreen = () => {
               </motion.div>
 
               <motion.div
-                className="flex items-center py-1 px-4 gap-4 rounded-2xl bg-gray-900/30 backdrop-blur-sm border border-gray-800/30"
+                className="flex items-center py-1 px-4 gap-4 bg-[#252525]"
                 whileHover={{ scale: 1.05 }}
               >
                 <div className="text-gray-400 text-sm font-medium">
@@ -164,7 +159,7 @@ const GameScreen = () => {
                 </div>
                 <div className="text-2xl font-bold text-white">
                   {matchedPairs.length}
-                  <span className="text-gray-500">/4</span>
+                  <span className="text-white">/4</span>
                 </div>
               </motion.div>
             </div>
@@ -172,14 +167,14 @@ const GameScreen = () => {
 
           {/* Progress Bar */}
           <motion.div
-            className="max-w-md mx-auto mb-12"
+            className="max-w-md mx-auto mb-6"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="relative h-2 bg-gray-900/50 rounded-full overflow-hidden backdrop-blur-sm border border-gray-800/30">
+            <div className="relative h-2 bg-[#252525] rounded-full overflow-hidden backdrop-blur-sm border border-gray-800/30">
               <motion.div
-                className="absolute inset-y-0 left-0 bg-gradient-to-r from-white to-gray-300 rounded-full"
+                className="absolute inset-y-0 left-0 bg-[#96FF43]  rounded-full"
                 initial={{ width: 0 }}
                 animate={{ width: `${(matchedPairs.length / 4) * 100}%` }}
                 transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -227,7 +222,6 @@ const GameScreen = () => {
         isOpen={isGameComplete}
         moves={moves}
         onPlayAgain={initializeGame}
-        onHome={() => (window.location.href = "/")}
       />
     </div>
   );
