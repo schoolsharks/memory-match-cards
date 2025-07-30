@@ -48,19 +48,19 @@ const IntroScreen = () => {
           
           <div className="text-gray-400 text-left space-y-3 mb-8">
             <div className="flex items-start gap-3">
-              <span className="text-white mt-1">•</span>
+              <span className="text-white">•</span>
               <span>Match each risky scenario with the right next step.</span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="text-white mt-1">•</span>
+              <span className="text-white">•</span>
               <span>Tap to flip the cards and see what's inside.</span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="text-white mt-1">•</span>
+              <span className="text-white">•</span>
               <span>Find all 3 matching pairs.</span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="text-white mt-1">•</span>
+              <span className="text-white">•</span>
               <span>Try to use the least moves!</span>
             </div>
           </div>

@@ -13,13 +13,13 @@ const ResultModal = ({ isOpen, moves, onPlayAgain }: ResultModalProps) => {
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
-        title: 'Card Flip Game',
+        title: 'Flip & Find',
         text: `I completed the game in ${moves} moves! Can you beat my score?`,
-        url: window.location.href,
+        url: window.location.origin,
       }).catch((error) => console.error('Error sharing:', error));
     } else {
       // Copy link to clipboard when sharing is not supported
-      navigator.clipboard.writeText(window.location.href)
+      navigator.clipboard.writeText(window.location.origin)
         .then(() => {
           alert('Link copied to clipboard! Share it with your friends.');
         })
