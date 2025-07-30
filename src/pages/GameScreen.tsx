@@ -117,7 +117,7 @@ const GameScreen = () => {
               </motion.button>
             </Link>
             <h1 className="text-2xl font-bold text-white">
-              Memory Match
+              Flip & Find
             </h1>
             <motion.button
               onClick={initializeGame}
